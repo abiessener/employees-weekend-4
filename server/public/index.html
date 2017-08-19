@@ -69,6 +69,8 @@
           <td>{{employee.id}}</td>
           <td>{{employee.jobtitle}}</td>
           <td>{{employee.salary | currency}}</td>
+          <td ng-if="employee.is_active"><button ng-click="vm.updateEmployee(employee.id, false)" class="button-warning xButton">X</button></td>
+          <td ng-if="employee.is_active == false"><button ng-click="vm.updateEmployee(employee.id, true)" class="button-warning +Button">+</button></td>
         </tr>
       </table>
     </div>

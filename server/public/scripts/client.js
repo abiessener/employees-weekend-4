@@ -42,7 +42,18 @@ app.controller('EmployeeController', ['$http', function($http){
         });
     };
 
+    self.updateEmployee = function(id, activate){
+        console.log('suspendEmployee(' + id + ')');
+        
+        $http({
+            method: 'PUT',
+            url: '/list/' + id,
+            data: { active: activate }
+        }).then(function(response){
+            self.getList();
+        });
 
+    }
     // // test GET route
     // $http({
     //     method: 'GET',

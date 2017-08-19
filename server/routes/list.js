@@ -9,7 +9,7 @@ router.get('/', function(req,res){
             console.log('error connecting to db:', err);
             res.sendStatus(500);
         } else {
-            db.query('SELECT * FROM employees', function(err,result){
+            db.query('SELECT * FROM employees ORDER BY is_active, id', function(err,result){
                 done();
                 if(err){
                     console.log('error making query');
@@ -42,9 +42,26 @@ router.post('/', function(req,res){
     }); // end connect
 }); // end POST
 
-router.put('/', function(req,res){
-    console.log('/list PUT hit');
-    res.sendStatus(200);
+router.put('/:id', function(req,res){
+    console.log('/list PUT hit', req.params.id);
+
+    pool.connect(function(err,db,done){
+        if (err){
+            console.log('error connecting to db', err);
+            res.sendStatus(500);
+        } else {
+            db.query('UPDATE employees SET is_active=$1 WHERE id=$2;', [req.body.active, req.params.id], function(err, db){
+                done();
+                if(err){
+                    console.log('error making query:', err);                    
+                } else {
+                    res.sendStatus(200);
+                }
+            }); //end query
+        }
+
+    }); // end connect
+    
 });
 
 module.exports = router;

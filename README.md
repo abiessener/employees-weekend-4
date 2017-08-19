@@ -18,10 +18,10 @@
 * Display employees on DOM
 * POST route
 * Client-side monthly average calc & display
+* Suspend/reactivate button
+* EDIT route
 
 ## TODO 
 
 ## HARDMODE
-* Suspend/reactivate button
-* EDIT route
 * Styling for inactive employees
