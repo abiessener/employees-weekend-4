@@ -65,8 +65,10 @@ app.controller('EmployeeController', ['$http', function($http){
     // opens the edit form with the passed employee ID
     self.openEdit = function(employee){
         console.log('openEdit');
-        self.editState = true;
-        self.employeeToEdit = employee;
+        if(self.editState === false){
+            self.editState = true;
+            self.employeeToEdit = employee;
+        };
     };
 
     // takes the edited employee data and sends it to the server
