@@ -7,11 +7,14 @@
 * Source Angular
 * Source jQuery
 * Source Bootstrap
+* Setup npm
+* Basic server setup
+* Source body-parser, express
+
 
 ## TODO 
 
-* Basic server setup
-* Source pg, body-parser, express
+* Source pg
 * '/list' route setup
 
 * Static DOM setup
