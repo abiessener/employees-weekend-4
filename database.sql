@@ -5,7 +5,8 @@ CREATE TABLE employees (
     firstname VARCHAR(32) NOT NULL,
     lastname VARCHAR(64) NOT NULL,
     jobtitle VARCHAR(64) NOT NULL,
-    salary INT NOT NULL
+    salary INT NOT NULL,
+    is_active BOOLEAN DEFAULT true
 );
 
 INSERT INTO employees (firstname, lastname, jobtitle, salary) VALUES
