@@ -8,7 +8,7 @@ app.controller('EmployeeController', ['$http', function($http){
     var self = this;
     self.pageTitle = 'Weekend Challenge 4: Full-Stack Employee Salary App';
 
-    self.calcResult = 3456;
+    self.calcResult = 0;
     self.employeeList = [];
 
     self.newEmployee = {};
@@ -20,6 +20,10 @@ app.controller('EmployeeController', ['$http', function($http){
         }).then(function(response){
             console.log('GET response:', response);
             self.employeeList = response.data;
+            self.calcResult = 0;
+            for (var i = 0; i < self.employeeList.length; i++) {
+                self.calcResult += self.employeeList[i].salary / 12;                
+            }
         });    
     };
 

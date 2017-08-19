@@ -17,11 +17,9 @@
 * GET route
 * Display employees on DOM
 * POST route
+* Client-side monthly average calc & display
 
 ## TODO 
-
-
-* Client-side monthly average calc & display
 
 ## HARDMODE
 * Suspend/reactivate button

@@ -13,5 +13,16 @@ header {
 
 #calcDiv{
     text-align: center;
-    
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    padding: 10px;
+    text-decoration: underline;
+    border-radius: 10px;
+    background-color: #C0E3F8;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+
 }

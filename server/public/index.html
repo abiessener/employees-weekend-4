@@ -33,7 +33,7 @@
         </label>
 
         <label for="salaryInput">Salary:
-          <input id="salaryInput" ng-model="vm.newEmployee.salary" class="form-control">
+          <input id="salaryInput" ng-model="vm.newEmployee.salary" class="form-control" type="number" >
         </label>
 
         <label for="jobTitleInput">Job Title:
@@ -85,7 +85,7 @@
     <div class="col-md-8 col-sm-8 col-xs-8">      
       <h2>Monthly Salary Expenditure</h3>
       <div id="calcDiv">
-        {{vm.calcResult | currency : 3}}
+        {{vm.calcResult | currency}}
       </div>
     </div>
         

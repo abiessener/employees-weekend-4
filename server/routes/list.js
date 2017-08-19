@@ -24,9 +24,7 @@ router.get('/', function(req,res){
 
 router.post('/', function(req,res){
     console.log('/list POST hit');
-    console.log('req.body', req.body);
     
-
     pool.connect(function(err,db,done){
         if (err){
             console.log('error connecting to db:', err);
