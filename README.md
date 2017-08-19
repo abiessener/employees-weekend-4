@@ -20,8 +20,8 @@
 * Client-side monthly average calc & display
 * Suspend/reactivate button
 * EDIT route
+* Styling for inactive employees
 
 ## TODO 
 
 ## HARDMODE
-* Styling for inactive employees

@@ -14,3 +14,6 @@ INSERT INTO employees (firstname, lastname, jobtitle, salary) VALUES
 ('Torii', 'Hunter', 'Preacher', 88932),
 ('Jacque', 'Jones', 'Hype Man', 23000),
 ('Shannon', 'Stewart', 'Emergency Repairman', 64833);
+
+INSERT INTO employees (firstname, lastname, jobtitle, salary, is_active) VALUES
+('Marty', 'Cordova', 'Boy Wonder', 29837, false);

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var pool = require('../modules/pool');
 
+// gets the list of employees from the database and sends it back to the client, with active employees first and then ordered by their employee ID
 router.get('/', function(req,res){
     console.log('/list GET hit');
     pool.connect(function(err,db,done){
@@ -22,6 +23,7 @@ router.get('/', function(req,res){
     }); // end connect
 }); // end GET
 
+// takes an object from the client and inserts it into the database
 router.post('/', function(req,res){
     console.log('/list POST hit');
     
@@ -42,6 +44,7 @@ router.post('/', function(req,res){
     }); // end connect
 }); // end POST
 
+// takes an employee ID to change to active or inactive as a URL parameter and the new state to set as data, and sends that to the database
 router.put('/:id', function(req,res){
     console.log('/list PUT hit', req.params.id);
 

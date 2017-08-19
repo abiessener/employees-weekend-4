@@ -13,6 +13,7 @@ app.controller('EmployeeController', ['$http', function($http){
 
     self.newEmployee = {};
 
+    // get the list of employees from the server, and perform the calculation to display the monthly expenditure
     self.getList = function(){
         $http({
             method: 'GET',
@@ -29,8 +30,10 @@ app.controller('EmployeeController', ['$http', function($http){
         });    
     };
 
+    // initial table population
     self.getList();
 
+    // send user input to the server, then get an updated list and clear the newEmployee object (and thus the input fields on the DOM)
     self.addEmployee = function(){
         console.log('addEmployee');
         
@@ -44,6 +47,7 @@ app.controller('EmployeeController', ['$http', function($http){
         });
     };
 
+    // takes the id of the employee to update and a boolean that we'll be setting their is_active property in the database to. Sends the id as a URL parameter and the boolean as data. Gets an updated list afterwards
     self.updateEmployee = function(id, activate){
         console.log('updateEmployee(' + id + ')');
         
@@ -54,29 +58,5 @@ app.controller('EmployeeController', ['$http', function($http){
         }).then(function(response){
             self.getList();
         });
-
     }
-    // // test GET route
-    // $http({
-    //     method: 'GET',
-    //     url: '/list'
-    // }).then(function(response){
-    //     console.log('GET response:', response);    
-    // });
-
-    // // test POST route
-    // $http({
-    //     method: 'POST',
-    //     url: '/list'
-    // }).then(function(response){
-    //     console.log('POST response:', response);
-    // });
-
-    // // test PUT route
-    // $http({
-    //     method: 'PUT',
-    //     url: '/list'
-    // }).then(function(response){
-    //     console.log('PUT response:', response);
-    // });
 }]);
