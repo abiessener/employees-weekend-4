@@ -18,11 +18,13 @@ app.controller('EmployeeController', ['$http', function($http){
             method: 'GET',
             url: '/list'
         }).then(function(response){
-            console.log('GET response:', response);
+            console.log('GET response:', response.data);
             self.employeeList = response.data;
             self.calcResult = 0;
             for (var i = 0; i < self.employeeList.length; i++) {
-                self.calcResult += self.employeeList[i].salary / 12;                
+                if(self.employeeList[i].is_active){
+                    self.calcResult += self.employeeList[i].salary / 12;                
+                }
             }
         });    
     };
@@ -43,7 +45,7 @@ app.controller('EmployeeController', ['$http', function($http){
     };
 
     self.updateEmployee = function(id, activate){
-        console.log('suspendEmployee(' + id + ')');
+        console.log('updateEmployee(' + id + ')');
         
         $http({
             method: 'PUT',

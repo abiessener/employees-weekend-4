@@ -20,8 +20,8 @@
   </header>
   <hr>
   <section class="row">
-    <div class="col-md-2 col-sm-2 col-xs-2"></div>
-    <div id="inputSection" class="col-md-8 col-sm-8 col-xs-8">
+    <div class="col-md-2 col-sm-2 col-xs-0 spacer"></div>
+    <div id="inputSection" class="col-md-8 col-sm-8 col-xs-12">
       <h2>Add Employee:</h2>
       <form class="form-horizontal" ng-submit="vm.addEmployee()">
         <label for="firstNameInput">First Name:
@@ -43,14 +43,14 @@
         <button class="btn-primary">Submit</button>
       </form>
     </div>
-    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-md-2 col-sm-2 col-xs-0 spacer"></div>
   </section>
 
   <div class="clearfix"></div>
   <hr>
   
   <section id="outputSection" class="row">
-    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 spacer"></div>
 
     <div class="col-md-8 col-sm-8 col-xs-8">        
       <h2>Employee List</h2>
@@ -63,7 +63,7 @@
           <th>Title</th>
           <th>Annual Salary</th>
         </thead>
-        <tr ng-repeat="employee in vm.employeeList" data-isActive="employee.is_active" ng-class="{activeEmployee: employee.is_active, inactiveEmployee: employee.is_active}">
+        <tr ng-repeat="employee in vm.employeeList" data-isActive="employee.is_active" ng-class="{activeEmployee: employee.is_active, inactiveEmployee: !employee.is_active}">
           <td>{{employee.firstname}}</td>
           <td>{{employee.lastname}}</td>
           <td>{{employee.id}}</td>
@@ -74,7 +74,7 @@
         </tr>
       </table>
     </div>
-    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 spacer"></div>
 
   </section>
 
@@ -82,7 +82,7 @@
   <hr>
 
   <section id="calcSection" class="row">
-    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+    <div class="col-md-2 col-sm-2 col-xs-2 spacer"></div>
 
     <div class="col-md-8 col-sm-8 col-xs-8">      
       <h2>Monthly Salary Expenditure</h3>
@@ -91,7 +91,7 @@
       </div>
     </div>
         
-    <div class="col-md-2 col-sm-2 col-xs-2"></div>    
+    <div class="col-md-2 col-sm-2 col-xs-2 spacer"></div>    
   </section>
 
   <!-- Optional JavaScript (Bootstrap Boilerplate)-->

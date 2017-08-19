@@ -9,7 +9,7 @@ router.get('/', function(req,res){
             console.log('error connecting to db:', err);
             res.sendStatus(500);
         } else {
-            db.query('SELECT * FROM employees ORDER BY is_active, id', function(err,result){
+            db.query('SELECT * FROM employees ORDER BY is_active DESC, id', function(err,result){
                 done();
                 if(err){
                     console.log('error making query');
