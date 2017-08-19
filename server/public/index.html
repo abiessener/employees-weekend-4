@@ -48,7 +48,37 @@
 
   <div class="clearfix"></div>
   <hr>
+
+  <section class="row" ng-if="vm.editState" id="editSection">
+      <div class="col-md-2 col-sm-2 col-xs-0 spacer"></div>
+      <div id="editDiv" class="col-md-8 col-sm-8 col-xs-12">
+        <h2>Edit Employee ID: {{vm.employeeToEdit.id}}</h2>
+        <form class="form-horizontal" ng-submit="vm.editEmployee()">
+          <label for="firstNameEdit">First Name:
+              <input id="firstNameEdit" ng-model="vm.employeeToEdit.firstname" class="form-control">
+          </label>
   
+          <label for="lastNameEdit">Last Name:
+            <input id="lastNameEdit" ng-model="vm.employeeToEdit.lastname" class="form-control">
+          </label>
+  
+          <label for="salaryEdit">Salary:
+            <input id="salaryEdit" ng-model="vm.employeeToEdit.salary" class="form-control" type="number" >
+          </label>
+  
+          <label for="jobTitleEdit">Job Title:
+            <input id="jobTitleEdit" ng-model="vm.employeeToEdit.jobtitle" class="form-control">
+          </label>
+  
+          <button class="btn-default" ng-click="vm.cancelEdit()" type="button">Cancel</button>
+          <button class="btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-0 spacer"></div>
+    </section>
+  
+    <div class="clearfix"></div>
+
   <section id="outputSection" class="row">
     <div class="col-md-2 col-sm-2 col-xs-2 spacer"></div>
 
@@ -71,6 +101,7 @@
           <td>{{employee.salary | currency}}</td>
           <td ng-if="employee.is_active"><button ng-click="vm.updateEmployee(employee.id, false)" class="button-warning xButton">X</button></td>
           <td ng-if="employee.is_active == false"><button ng-click="vm.updateEmployee(employee.id, true)" class="button-warning +Button">+</button></td>
+          <td><button class="button-default" ng-click="vm.openEdit(employee)">Edit</button></td>
         </tr>
       </table>
     </div>

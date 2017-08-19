@@ -12,6 +12,8 @@ app.controller('EmployeeController', ['$http', function($http){
     self.employeeList = [];
 
     self.newEmployee = {};
+    self.editState = false;
+    self.employeeToEdit = {};
 
     // get the list of employees from the server, and perform the calculation to display the monthly expenditure
     self.getList = function(){
@@ -58,5 +60,37 @@ app.controller('EmployeeController', ['$http', function($http){
         }).then(function(response){
             self.getList();
         });
-    }
+    };
+
+    // opens the edit form with the passed employee ID
+    self.openEdit = function(employee){
+        console.log('openEdit');
+        self.editState = true;
+        self.employeeToEdit = employee;
+    };
+
+    // takes the edited employee data and sends it to the server
+    self.editEmployee = function(){
+        console.log('editEmployee');
+
+        $http({
+            method: 'PUT',
+            url: '/edit',
+            data: self.employeeToEdit
+        }).then(function(response){
+            self.editState = false;
+            self.employeeToEdit = {};
+        });
+        
+    };
+
+    // resets the editState and employeeToEdit, then gets a new list from the server.
+    /* don't love doing getList here, seems inefficient, but I can't think
+       of a better way to avoid the issue of the local display being wrong if
+       the user does some edits then cancels */ 
+    self.cancelEdit = function(){
+        self.editState = false;
+        self.employeeToEdit = {};
+        self.getList();
+    };
 }]);
