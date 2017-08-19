@@ -63,7 +63,7 @@
           <th>Title</th>
           <th>Annual Salary</th>
         </thead>
-        <tr ng-repeat="employee in vm.employeeList" data-isActive="employee.is_active">
+        <tr ng-repeat="employee in vm.employeeList" data-isActive="employee.is_active" ng-class="{activeEmployee: employee.is_active, inactiveEmployee: employee.is_active}">
           <td>{{employee.firstname}}</td>
           <td>{{employee.lastname}}</td>
           <td>{{employee.id}}</td>
