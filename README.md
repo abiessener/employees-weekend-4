@@ -4,14 +4,14 @@
 ## DONE
 * File structure
 * SQL setup
-
-## TODO 
 * Source Angular
 * Source jQuery
 * Source Bootstrap
-* Source pg, body-parser, express
+
+## TODO 
 
 * Basic server setup
+* Source pg, body-parser, express
 * '/list' route setup
 
 * Static DOM setup
