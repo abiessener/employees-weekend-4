@@ -8,6 +8,8 @@ app.controller('EmployeeController', ['$http', function($http){
     var self = this;
     self.pageTitle = 'Weekend Challenge 4: Full-Stack Employee Salary App';
 
+    self.calcResult = 3456;
+    
     // test GET route
     $http({
         method: 'GET',
