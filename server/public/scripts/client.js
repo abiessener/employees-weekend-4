@@ -67,7 +67,13 @@ app.controller('EmployeeController', ['$http', function($http){
         console.log('openEdit');
         if(self.editState === false){
             self.editState = true;
-            self.employeeToEdit = employee;
+            self.employeeToEdit = {
+                id: employee.id,
+                firstname: employee.firstname,
+                lastname: employee.lastname,
+                jobtitle: employee.jobtitle,
+                salary: employee.salary,
+            };
         };
     };
 
@@ -82,6 +88,7 @@ app.controller('EmployeeController', ['$http', function($http){
         }).then(function(response){
             self.editState = false;
             self.employeeToEdit = {};
+            self.getList();
         });
         
     };
@@ -93,6 +100,6 @@ app.controller('EmployeeController', ['$http', function($http){
     self.cancelEdit = function(){
         self.editState = false;
         self.employeeToEdit = {};
-        self.getList();
+        // self.getList();
     };
 }]);
