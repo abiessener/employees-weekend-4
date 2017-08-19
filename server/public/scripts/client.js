@@ -11,6 +11,8 @@ app.controller('EmployeeController', ['$http', function($http){
     self.calcResult = 3456;
     self.employeeList = [];
 
+    self.newEmployee = {};
+
     self.getList = function(){
         $http({
             method: 'GET',
@@ -19,9 +21,23 @@ app.controller('EmployeeController', ['$http', function($http){
             console.log('GET response:', response);
             self.employeeList = response.data;
         });    
-    }
+    };
 
     self.getList();
+
+    self.addEmployee = function(){
+        console.log('addEmployee');
+        
+        $http({
+            method: 'POST',
+            url: '/list',
+            data: self.newEmployee
+        }).then(function(response){
+            self.newEmployee = {};
+            self.getList();
+        });
+    };
+
 
     // // test GET route
     // $http({

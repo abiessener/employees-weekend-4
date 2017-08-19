@@ -23,21 +23,21 @@
     <div class="col-md-2 col-sm-2 col-xs-2"></div>
     <div id="inputSection" class="col-md-8 col-sm-8 col-xs-8">
       <h2>Add Employee:</h2>
-      <form class="form-horizontal">
+      <form class="form-horizontal" ng-submit="vm.addEmployee()">
         <label for="firstNameInput">First Name:
-            <input id="firstNameInput" class="form-control">
+            <input id="firstNameInput" ng-model="vm.newEmployee.firstname" class="form-control">
         </label>
 
         <label for="lastNameInput">Last Name:
-          <input id="lastNameInput" class="form-control">
+          <input id="lastNameInput" ng-model="vm.newEmployee.lastname" class="form-control">
         </label>
 
         <label for="salaryInput">Salary:
-          <input id="salaryInput" class="form-control">
+          <input id="salaryInput" ng-model="vm.newEmployee.salary" class="form-control">
         </label>
 
         <label for="jobTitleInput">Job Title:
-          <input id="jobTitleInput" class="form-control">
+          <input id="jobTitleInput" ng-model="vm.newEmployee.jobtitle" class="form-control">
         </label>
 
         <button class="btn-primary">Submit</button>
@@ -68,7 +68,7 @@
           <td>{{employee.lastname}}</td>
           <td>{{employee.id}}</td>
           <td>{{employee.jobtitle}}</td>
-          <td>{{employee.salary}}</td>
+          <td>{{employee.salary | currency}}</td>
         </tr>
       </table>
     </div>

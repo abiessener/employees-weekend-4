@@ -15,11 +15,11 @@
 * Static DOM setup
 * Bootstrap stylings
 * GET route
+* Display employees on DOM
+* POST route
 
 ## TODO 
-* Display employees on DOM
 
-* POST route
 
 * Client-side monthly average calc & display
 
