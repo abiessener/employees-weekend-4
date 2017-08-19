@@ -1,0 +1,25 @@
+{
+  "name": "employees-weekend-4",
+  "version": "1.0.0",
+  "description": "Full-stack employee salary app",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "pg": "^7.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abiessener/employees-weekend-4.git"
+  },
+  "author": "Adam Biessener",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abiessener/employees-weekend-4/issues"
+  },
+  "homepage": "https://github.com/abiessener/employees-weekend-4#readme"
+}
