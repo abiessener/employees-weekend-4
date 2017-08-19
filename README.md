@@ -14,9 +14,11 @@
 * '/list' route setup
 * Static DOM setup
 * Bootstrap stylings
+* GET route
 
 ## TODO 
-* GET route
+* Display employees on DOM
+
 * POST route
 
 * Client-side monthly average calc & display

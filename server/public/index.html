@@ -19,7 +19,6 @@
     <h1>{{vm.pageTitle}}</h1>
   </header>
   <hr>
-  {{vm.employeeList}}  
   <section class="row">
     <div class="col-md-2 col-sm-2 col-xs-2"></div>
     <div id="inputSection" class="col-md-8 col-sm-8 col-xs-8">
@@ -64,19 +63,12 @@
           <th>Title</th>
           <th>Annual Salary</th>
         </thead>
-        <tr>
-          <td>Jeff</td>
-          <td>Example</td>
-          <td>0001</td>
-          <td>Lead Examplar</td>
-          <td>$43,000</td>
-        </tr>
-        <tr>
-          <td>Jeff</td>
-          <td>Example</td>
-          <td>0001</td>
-          <td>Lead Examplar</td>
-          <td>$43,000</td>
+        <tr ng-repeat="employee in vm.employeeList" data-isActive="employee.is_active">
+          <td>{{employee.firstname}}</td>
+          <td>{{employee.lastname}}</td>
+          <td>{{employee.id}}</td>
+          <td>{{employee.jobtitle}}</td>
+          <td>{{employee.salary}}</td>
         </tr>
       </table>
     </div>
